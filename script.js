@@ -11,6 +11,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const WHATSAPP_NUMBER = "23470338675656";
 
+    const themeToggle = document.getElementById("themeToggle");
+    const applyTheme = theme => {
+        const selectedTheme = theme === "dark" ? "dark" : "light";
+        document.documentElement.dataset.theme = selectedTheme;
+
+        if (themeToggle) {
+            const isDark = selectedTheme === "dark";
+            const label = isDark ? "Switch to light mode" : "Switch to dark mode";
+            themeToggle.setAttribute("aria-label", label);
+            themeToggle.setAttribute("title", label);
+            themeToggle.setAttribute("aria-pressed", String(isDark));
+        }
+    };
+
+    applyTheme(document.documentElement.dataset.theme || "light");
+
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            const nextTheme =
+                document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+            applyTheme(nextTheme);
+
+            try {
+                localStorage.setItem("prosper-theme", nextTheme);
+            } catch (error) {
+                console.warn("Unable to save the theme preference.", error);
+            }
+        });
+    }
+
     const contactForm = document.getElementById("contactForm");
     const contactFormFeedback = document.getElementById("contactFormFeedback");
     let contactFeedbackTimeout;

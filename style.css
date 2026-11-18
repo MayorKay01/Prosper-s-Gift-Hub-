@@ -5,6 +5,10 @@
   --red: #b5122b;
   --dark-red: #8f0d21;
   --coral: #f46f83;
+  --brand-fill: var(--red);
+  --brand-gradient: linear-gradient(135deg, var(--red), var(--coral));
+  --brand-gradient-hover: linear-gradient(135deg, var(--dark-red), #d34c68);
+  --callout-background: linear-gradient(130deg, var(--red), #c54164 60%, var(--plum));
   --gold: #e7ae42;
   --plum: #70499a;
   --teal: #348b84;
@@ -12,16 +16,117 @@
   --pink: #f6c5d0;
   --light-pink: #fff0f4;
   --white: #fff;
+  --surface: #fff;
+  --field-surface: #fffdfd;
   --cream: #fffaf8;
   --dark: #1d1b1c;
   --grey: #6d6668;
   --light-grey: #f5f3f3;
   --border: #eadfe2;
+  --header-surface: rgba(255, 250, 248, 0.96);
+  --hero-background:
+    radial-gradient(
+      circle at 8% 4%,
+      rgba(244, 111, 131, 0.16),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 94% 8%,
+      rgba(231, 174, 66, 0.17),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #fffaf8, #fff1f5);
+  --section-label-background: linear-gradient(135deg, #fff0f4, #fff5df);
+  --filter-surface: rgba(255, 255, 255, 0.82);
+  --filter-border: rgba(234, 223, 226, 0.9);
+  --product-border: rgba(234, 223, 226, 0.75);
+  --contact-border: rgba(234, 223, 226, 0.78);
+  --card-shadow: 0 8px 25px rgba(40, 20, 25, 0.07);
+  --card-shadow-soft: 0 8px 25px rgba(40, 20, 25, 0.06);
+  --dropdown-shadow: 0 16px 25px rgba(40, 20, 25, 0.1);
+  --filter-shadow: 0 10px 30px rgba(70, 20, 30, 0.06);
+  --focus-ring: rgba(181, 18, 43, 0.35);
+  --service-gift-surface: #fff0f4;
+  --service-gift-color: var(--red);
+  --service-souvenir-surface: #edf6fb;
+  --service-souvenir-color: var(--blue);
+  --service-fashion-surface: #fff5df;
+  --service-fashion-color: #bd8427;
+  --service-delivery-surface: #eaf7f3;
+  --service-delivery-color: var(--teal);
+  --success-surface: #effaf4;
+  --success-border: #b8e3cd;
+  --success-color: #176b43;
+  --error-surface: #fff3f4;
+  --error-border: #f0c4c9;
+  --error-color: #9b2436;
   --shadow: 0 15px 40px rgba(70, 20, 30, 0.1);
   --radius: 18px;
   --page-width: 1180px;
   --page-gutter: clamp(1rem, 4vw, 2.25rem);
   --transition: 0.25s ease;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --red: #c8102e;
+  --dark-red: #a20d28;
+  --coral: #d94664;
+  --brand-fill: #c8102e;
+  --brand-gradient: linear-gradient(135deg, #c8102e, #d94664);
+  --brand-gradient-hover: linear-gradient(135deg, #a20d28, #b8324e);
+  --callout-background: linear-gradient(130deg, #a20d28, #9e3454 60%, #503b73);
+  --pink: #f26380;
+  --light-pink: #35232b;
+  --surface: #202027;
+  --field-surface: #25252d;
+  --cream: #101014;
+  --dark: #f5f5f7;
+  --grey: #b8b8c2;
+  --light-grey: #25252d;
+  --border: #34343d;
+  --header-surface: rgba(24, 24, 31, 0.94);
+  --hero-background:
+    radial-gradient(
+      circle at 8% 4%,
+      rgba(200, 16, 46, 0.2),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 94% 8%,
+      rgba(231, 174, 66, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #101014, #18181f);
+  --section-label-background: linear-gradient(135deg, #29232b, #302127);
+  --filter-surface: rgba(32, 32, 39, 0.9);
+  --filter-border: #34343d;
+  --product-border: #34343d;
+  --contact-border: #34343d;
+  --card-shadow: 0 8px 25px rgba(0, 0, 0, 0.24);
+  --card-shadow-soft: 0 8px 25px rgba(0, 0, 0, 0.2);
+  --dropdown-shadow: 0 16px 25px rgba(0, 0, 0, 0.35);
+  --filter-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
+  --focus-ring: rgba(242, 99, 128, 0.55);
+  --service-gift-surface: #39212a;
+  --service-gift-color: #ff8299;
+  --service-souvenir-surface: #202f39;
+  --service-souvenir-color: #83c8e8;
+  --service-fashion-surface: #393124;
+  --service-fashion-color: #f0c46f;
+  --service-delivery-surface: #203732;
+  --service-delivery-color: #7bd1b8;
+  --success-surface: #173126;
+  --success-border: #285d43;
+  --success-color: #a5e3bf;
+  --error-surface: #351d24;
+  --error-border: #71313f;
+  --error-color: #ffb3c0;
+  --service-gift-color: #ff8299;
+  --service-souvenir-color: #83c8e8;
+  --service-fashion-color: #f0c46f;
+  --service-delivery-color: #7bd1b8;
+  --shadow: 0 15px 40px rgba(0, 0, 0, 0.38);
 }
 
 * {
@@ -49,6 +154,9 @@ body {
     "Segoe UI",
     sans-serif;
   line-height: 1.6;
+  transition:
+    background-color var(--transition),
+    color var(--transition);
 }
 
 img {
@@ -75,7 +183,7 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid rgba(181, 18, 43, 0.35);
+  outline: 3px solid var(--focus-ring);
   outline-offset: 3px;
 }
 
@@ -94,8 +202,11 @@ textarea:focus-visible {
   z-index: 1000;
   top: 0;
   border-bottom: 1px solid var(--border);
-  background: rgba(255, 250, 248, 0.96);
+  background: var(--header-surface);
   backdrop-filter: blur(14px);
+  transition:
+    background-color var(--transition),
+    border-color var(--transition);
 }
 
 .nav {
@@ -140,6 +251,9 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   gap: clamp(0.85rem, 2vw, 1.7rem);
+  transition:
+    background-color var(--transition),
+    color var(--transition);
 }
 
 .nav-links a {
@@ -160,7 +274,7 @@ textarea:focus-visible {
   bottom: 0.2rem;
   left: 0;
   height: 2px;
-  background: var(--red);
+  background: var(--brand-fill);
   content: "";
   transform: scaleX(0);
   transform-origin: left;
@@ -179,7 +293,8 @@ textarea:focus-visible {
 }
 
 .cart-button,
-.menu-button {
+.menu-button,
+.theme-toggle {
   display: inline-flex;
   min-width: 44px;
   min-height: 44px;
@@ -187,19 +302,21 @@ textarea:focus-visible {
   justify-content: center;
   border: 1px solid var(--border);
   border-radius: 12px;
-  background: var(--white);
+  background: var(--surface);
   color: var(--dark);
   padding: 0.55rem 0.8rem;
   transition:
     background var(--transition),
+    border-color var(--transition),
     color var(--transition),
     transform var(--transition);
 }
 
 .cart-button:hover,
-.menu-button:hover {
+.menu-button:hover,
+.theme-toggle:hover {
   transform: translateY(-1px);
-  background: var(--red);
+  background: var(--brand-fill);
   color: var(--white);
 }
 
@@ -220,18 +337,36 @@ textarea:focus-visible {
   color: var(--white);
   font-size: 0.72rem;
   font-weight: 700;
+  transition:
+    background-color var(--transition),
+    color var(--transition);
 }
 
 .menu-button {
   display: none;
 }
 
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+}
+
+.theme-icon {
+  width: 20px;
+  height: 20px;
+}
+
+[data-theme="light"] .theme-icon-moon,
+[data-theme="dark"] .theme-icon-sun {
+  display: none;
+}
+
 /* Hero */
 .hero {
   padding-block: clamp(3.5rem, 8vw, 7rem);
-  background:
-    radial-gradient(circle at 90% 8%, #ffdce5 0, transparent 34%),
-    linear-gradient(135deg, #fffaf8, #fff1f5);
+  background: var(--hero-background);
+  transition: background-color var(--transition);
 }
 
 .hero-grid {
@@ -301,29 +436,29 @@ textarea:focus-visible {
 }
 
 .btn.primary {
-  background: var(--red);
+  background: var(--brand-gradient);
   color: var(--white);
 }
 
 .btn.primary:hover {
   transform: translateY(-2px);
-  background: var(--dark-red);
+  background: var(--brand-gradient-hover);
   box-shadow: 0 10px 25px rgba(181, 18, 43, 0.2);
 }
 
 .btn.secondary {
   border-color: var(--red);
-  background: transparent;
+  background: var(--surface);
   color: var(--red);
 }
 
 .btn.secondary:hover {
-  background: var(--red);
+  background: var(--brand-fill);
   color: var(--white);
 }
 
 .btn.white {
-  background: var(--white);
+  background: var(--surface);
   color: var(--red);
 }
 
@@ -352,9 +487,13 @@ textarea:focus-visible {
   left: clamp(0.75rem, 2vw, 1.5rem);
   max-width: min(90%, 300px);
   border-radius: 15px;
-  background: var(--white);
+  background: var(--surface);
   padding: 1rem 1.25rem;
   box-shadow: var(--shadow);
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
 }
 
 /* Sections and about */
@@ -424,6 +563,9 @@ textarea:focus-visible {
   background: var(--light-pink);
   padding: 0.9rem 1rem;
   font-weight: 600;
+  transition:
+    background-color var(--transition),
+    color var(--transition);
 }
 
 .values span {
