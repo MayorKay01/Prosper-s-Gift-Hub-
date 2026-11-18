@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
        CONFIGURATION
        ===================================================== */
 
-    const WHATSAPP_NUMBER = "23470338675656";
+    const WHATSAPP_NUMBER = "2347033867656";
 
     const themeToggle = document.getElementById("themeToggle");
     const applyTheme = theme => {
