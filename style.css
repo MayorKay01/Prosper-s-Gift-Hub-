@@ -125,10 +125,6 @@
   --error-surface: #351d24;
   --error-border: #71313f;
   --error-color: #ffb3c0;
-  --service-gift-color: #ff8299;
-  --service-souvenir-color: #83c8e8;
-  --service-fashion-color: #f0c46f;
-  --service-delivery-color: #7bd1b8;
   --bag-tag-background: #855919;
   --shadow: 0 15px 40px rgba(0, 0, 0, 0.38);
 }
@@ -516,6 +512,9 @@ textarea:focus-visible {
   font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.12em;
+  transition:
+    background-color var(--transition),
+    color var(--transition);
 }
 
 .section-heading h2 {
@@ -707,6 +706,7 @@ textarea:focus-visible {
 
 .product-bottom strong {
   color: var(--accent-color);
+  transition: color var(--transition);
 }
 
 .add-cart {
@@ -882,7 +882,7 @@ textarea:focus-visible {
 .social-links a {
   border-radius: 10px;
   background: var(--light-pink);
-  color: var(--red);
+  color: var(--accent-color);
   padding: 0.6rem 0.9rem;
   font-weight: 700;
   transition:
@@ -1170,6 +1170,7 @@ textarea:focus-visible {
   gap: 1rem;
   border-bottom: 1px solid var(--border);
   padding-bottom: 1rem;
+  transition: border-color var(--transition);
 }
 
 .cart-header button {
@@ -1518,10 +1519,17 @@ footer a {
   }
 
   .cart-button,
-  .menu-button {
+  .menu-button,
+  .theme-toggle {
     min-width: 42px;
     min-height: 42px;
     padding: 0.45rem;
+  }
+
+  .theme-toggle {
+    width: 42px;
+    height: 42px;
+    padding: 0;
   }
 
   .hero {
@@ -1608,6 +1616,47 @@ footer a {
 
   .contact-actions {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 360px) {
+  .nav {
+    gap: 0.35rem;
+  }
+
+  .logo {
+    gap: 0.4rem;
+  }
+
+  .logo img {
+    height: 38px;
+    max-width: 52px;
+  }
+
+  .logo > span:last-child {
+    font-size: 0.68rem;
+  }
+
+  .logo small {
+    font-size: 0.45rem;
+  }
+
+  .nav-actions {
+    gap: 0.3rem;
+  }
+
+  .cart-button,
+  .menu-button,
+  .theme-toggle {
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    min-height: 36px;
+    padding: 0.25rem;
+  }
+
+  .theme-toggle {
+    padding: 0;
   }
 }
 
