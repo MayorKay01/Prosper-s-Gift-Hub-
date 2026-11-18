@@ -1311,6 +1311,10 @@ footer a {
     --page-gutter: 1rem;
   }
 
+  body {
+    min-width: 0;
+  }
+
   .nav {
     gap: 0.6rem;
   }
