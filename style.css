@@ -73,13 +73,14 @@
   color-scheme: dark;
   --red: #c8102e;
   --dark-red: #a20d28;
-  --coral: #d94664;
+  --coral: #d13d5b;
   --accent-color: #f26380;
   --brand-fill: #c8102e;
-  --brand-gradient: linear-gradient(135deg, #c8102e, #d94664);
+  --brand-gradient: linear-gradient(135deg, #c8102e, #d13d5b);
   --brand-gradient-hover: linear-gradient(135deg, #a20d28, #b8324e);
   --callout-background: linear-gradient(130deg, #a20d28, #9e3454 60%, #503b73);
   --pink: #f26380;
+  --teal: #26746f;
   --light-pink: #35232b;
   --surface: #202027;
   --field-surface: #25252d;
@@ -728,6 +729,10 @@ textarea:focus-visible {
   transform: translateY(-1px);
   background: var(--brand-fill);
   filter: brightness(0.9);
+}
+
+[data-theme="dark"] .add-cart:hover {
+  filter: none;
 }
 
 .empty-products {
