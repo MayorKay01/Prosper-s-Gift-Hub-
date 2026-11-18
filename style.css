@@ -767,21 +767,63 @@ textarea:focus-visible {
 
 .contact-box button[type="submit"] {
   width: 100%;
-  min-height: 48px;
-  border: 0;
-  border-radius: 50px;
-  background: var(--red);
+  height: 52px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--red), var(--coral));
   color: var(--white);
-  padding: 0.8rem 1rem;
+  padding: 0.8rem 1.25rem;
+  font-size: 0.96rem;
   font-weight: 700;
+  line-height: 1.2;
   transition:
     background var(--transition),
-    transform var(--transition);
+    transform var(--transition),
+    box-shadow var(--transition);
+  box-shadow: 0 6px 16px rgba(181, 18, 43, 0.16);
 }
 
-.contact-box button[type="submit"]:hover {
-  transform: translateY(-1px);
-  background: var(--dark-red);
+.contact-box button[type="submit"]:hover,
+.contact-box .btn.primary:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--dark-red), #d34c68);
+  box-shadow: 0 10px 24px rgba(181, 18, 43, 0.24);
+}
+
+.contact-box .btn.full {
+  height: 52px;
+  border-radius: 999px;
+  padding: 0.8rem 1.25rem;
+  font-size: 0.96rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.contact-box .btn.primary {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--red), var(--coral));
+  color: var(--white);
+  box-shadow: 0 6px 16px rgba(181, 18, 43, 0.16);
+}
+
+.contact-box .btn.secondary {
+  border: 1.5px solid var(--dark-red);
+  background: var(--white);
+  color: var(--dark-red);
+}
+
+.contact-box .btn.secondary:hover {
+  transform: translateY(-2px);
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--red), var(--coral));
+  color: var(--white);
+  box-shadow: 0 10px 24px rgba(181, 18, 43, 0.2);
+}
+
+.contact-box button[type="submit"]:focus-visible,
+.contact-box .btn.full:focus-visible {
+  outline: 3px solid rgba(181, 18, 43, 0.35);
+  outline-offset: 3px;
 }
 
 .contact-box button[type="submit"]:disabled {
