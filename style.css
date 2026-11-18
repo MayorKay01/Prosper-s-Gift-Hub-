@@ -366,7 +366,9 @@ textarea:focus-visible {
 .hero {
   padding-block: clamp(3.5rem, 8vw, 7rem);
   background: var(--hero-background);
-  transition: background-color var(--transition);
+  transition:
+    background var(--transition),
+    color var(--transition);
 }
 
 .hero-grid {
