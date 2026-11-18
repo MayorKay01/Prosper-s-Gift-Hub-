@@ -116,7 +116,7 @@ The contact form is connected to Formspree in `index.html`. To use a different F
 
 **Designed and Developed by Mayor_Kay**
 
-[![GitHub](https://img.shields.io/badge/GitHub-kalejaiyemayowa05--spec-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/kalejaiyemayowa05-spec)
+[![GitHub](https://img.shields.io/badge/GitHub-MayorKay01--spec-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/MayorKay01-spec)
 
 </div>
 
